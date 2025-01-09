@@ -7,5 +7,5 @@ Programmers:
 - Omar Montes
 
 
-#programming language used:
-  - C++
+Programming language used:
+    C++
