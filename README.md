@@ -3,3 +3,7 @@
 ### Sender and Receiver IPC
 
 Omar Montes
+
+
+#programming language used:
+- C++
