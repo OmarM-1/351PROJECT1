@@ -58,7 +58,7 @@ void init(int& shmid, int& msqid, void*& sharedMemPtr)
 
 
 	/* TODO: Attach to the message queue */	
-	msqid = msgget(key, 0666);
+	msqid = msgget(key, 0666 | IPC_CREAT);
 	if (msqid == -1){
 		perror("msgget");
 		exit(1);
@@ -110,7 +110,7 @@ unsigned long sendFile(const char* fileName)
 	if(!fp)
 	{
 		perror("fopen");
-		exit(-1);
+		exit(1);
 	}
 	
 	/* Read the whole file */
@@ -145,7 +145,8 @@ unsigned long sendFile(const char* fileName)
 		/* TODO: Wait until the receiver sends us a message of type RECV_DONE_TYPE telling us 
  		 * that he finished saving a chunk of memory. 
  		 */
-		if(msgrcv(msqid, &rcvMsg, sizeof(rcvMsg.mtype), RECV_DONE_TYPE, 0) == -1){
+		if(msgrcv(msqid, &rcvMsg, sizeof(rcvMsg) - sizeof(rcvMsg.mtype), RECV_DONE_TYPE, 0) == -1)
+		{
 			perror("msgrcv");
 			exit(1);
 		}
@@ -158,7 +159,7 @@ unsigned long sendFile(const char* fileName)
  	  * sending a message of type SENDER_DATA_TYPE with size field set to 0. 	
 	  */
 	sndMsg.size = 0;
-    if (msgsnd(msqid, &sndMsg, sizeof(sndMsg.size), 0) == -1) {
+    if (msgsnd(msqid, &sndMsg, sizeof(sndMsg) -sizeof(sndMsg.size), 0) == -1) {
         perror("msgsnd");
         exit(1);
     }
@@ -201,7 +202,7 @@ void sendFileName(const char* fileName)
 	/* TODO: Send the message using msgsnd */
 	if (msgsnd(msqid, &fileNameMessage, sizeof(fileNameMessage.fileName), 0) == -1) {
     perror("msgsnd");
-    exit(-1);
+    exit(1);
 	}
 
 }
