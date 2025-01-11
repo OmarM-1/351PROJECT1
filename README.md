@@ -7,7 +7,17 @@ Programmers:
 - Omar Montes
 
 
+Emails:
+- 621omontes@csu.fullerton.edu
+
+
 Programming language used:
  -    C++
 
+HOW TO RUN PROGRAM: 
+- 
 
+
+
+Contribution division: 
+- All worked together 
