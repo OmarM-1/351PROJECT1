@@ -1,2 +1,29 @@
 Design of Sender and Receiver for IPC
-**Overview**
+Overview
+- Mechanism to process the communication between two processes while both simutaneously running in an OS. 
+
+Sender and Reciever code objective:
+- Efficiency
+- Scalability
+- Security
+
+Sender Design: 
+  - Responsible for trasmitting data to the receiver.
+
+  - Data packaging using "struct" and including message size for processing at the receiver end. 
+  - Communication tied in with including shared memory for data transfer and message queues for synchonization 
+  - Error handling
+
+Receiver Design: 
+  - Responsible for processing data from the sender. 
+
+  - msgcrv() takes care of finding the sent messages
+  - data parsing allos for the validation of data allowing for correct formatting (e.g. adding '__recv')
+  - Using synchonization when accessing shared memory/resources.
+  - Error handling
+
+Implementation: 
+  - Shared Memory: Allows for fast data transfer
+  - Message Queues: Synchonizes communication between both processes 
+
+This design ensures reliability and scalability between two processes. 
