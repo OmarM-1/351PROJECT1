@@ -5,10 +5,16 @@
 
 Programmers: 
 - Omar Montes
+- Logan Clampitt
+- Josh Chopin
+- Swayam Shree
 
 
 Emails:
 - 621omontes@csu.fullerton.edu
+- lclampitt@csu.fullerton.du
+- joshchopin@gmail.com
+- sswayam@csu.fullerton.edu
 
 
 Programming language used:
