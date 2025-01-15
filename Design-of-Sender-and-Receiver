@@ -7,7 +7,7 @@ Sender and Reciever code objective:
 - Scalability
 - Security
 
-
+![Data Design](https://github.com/OmarM-1/CPSC-351-PROJECT-1/blob/main/data%20diagram.png?raw=true)
 
 Sender Design: 
   - Responsible for trasmitting data to the receiver.
