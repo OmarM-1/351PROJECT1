@@ -7,7 +7,7 @@ Sender and Reciever code objective:
 - Scalability
 - Security
 
-![image](file:///C:/Users/621om/Downloads/Data_Flow_Diagram%20(1).pdf)
+file:///C:/Users/621om/Downloads/Data_Flow_Diagram%20(1).pdf
 
 Sender Design: 
   - Responsible for trasmitting data to the receiver.
